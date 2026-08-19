@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vault Maintain"
+  short_description: "Lint and repair vault structure and provenance"
+  default_prompt: "Use $vault-maintain to inspect this vault and safely repair structural knowledge issues."

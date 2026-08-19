@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vault Ingest Paper"
+  short_description: "Integrate papers with page-level provenance"
+  default_prompt: "Use $vault-ingest-paper to ingest this academic PDF and connect it to the vault."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vault Query"
+  short_description: "Answer from the vault with traceable evidence"
+  default_prompt: "Use $vault-query to answer this question from my accumulated notes and sources."
