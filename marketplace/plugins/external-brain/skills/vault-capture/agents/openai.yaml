@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vault Capture"
+  short_description: "Turn personal thoughts into connected notes"
+  default_prompt: "Use $vault-capture to preserve this thought and integrate its durable ideas into my vault."

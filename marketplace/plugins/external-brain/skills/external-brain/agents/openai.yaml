@@ -1,0 +1,4 @@
+interface:
+  display_name: "External Brain"
+  short_description: "Capture, connect, and query an Obsidian knowledge graph"
+  default_prompt: "Use my External Brain vault to organize this material into durable, source-grounded notes."

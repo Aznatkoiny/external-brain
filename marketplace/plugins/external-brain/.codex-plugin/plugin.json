@@ -1,0 +1,35 @@
+{
+  "name": "external-brain",
+  "version": "0.2.1+codex.20260820031624",
+  "description": "Capture thoughts and academic papers as a source-grounded Obsidian knowledge graph.",
+  "author": {
+    "name": "Aznatkoiny",
+    "url": "https://github.com/Aznatkoiny"
+  },
+  "homepage": "https://github.com/Aznatkoiny/external-brain",
+  "repository": "https://github.com/Aznatkoiny/external-brain",
+  "keywords": [
+    "obsidian",
+    "zettelkasten",
+    "academic-papers",
+    "knowledge-management"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "External Brain",
+    "shortDescription": "Build a source-grounded Obsidian knowledge graph.",
+    "longDescription": "Capture thoughts, ingest academic PDFs with page citations, connect claims and concepts, and query or maintain an External Brain vault.",
+    "developerName": "Aznatkoiny",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Aznatkoiny/external-brain",
+    "defaultPrompt": [
+      "Ingest this academic PDF into my External Brain.",
+      "Remember this thought and connect it to my notes.",
+      "Find relationships across the papers in my vault."
+    ]
+  }
+}

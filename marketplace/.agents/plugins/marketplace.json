@@ -1,0 +1,20 @@
+{
+  "name": "external-brain",
+  "interface": {
+    "displayName": "External Brain"
+  },
+  "plugins": [
+    {
+      "name": "external-brain",
+      "source": {
+        "source": "local",
+        "path": "./plugins/external-brain"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

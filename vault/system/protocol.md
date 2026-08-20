@@ -12,20 +12,22 @@ tags:
 
 This file defines how agents turn conversations and sources into durable knowledge. It is authoritative for vault behavior.
 
+Repository paths in this protocol begin with `vault/`. Obsidian wikilinks are vault-relative and therefore omit that prefix.
+
 ## Knowledge layers
 
-1. **Raw sources** are immutable inputs: PDFs in `sources/papers/` and verbatim thoughts in `sources/thoughts/`.
-2. **Source records** in `sources/records/` describe one raw source, its metadata, scope, limitations, and extracted takeaways.
-3. **Atomic notes** in `notes/` hold one durable claim, concept, or question.
-4. **Maps** in `maps/` organize a topic without pretending that hierarchy is the only relationship.
-5. **Syntheses** in `syntheses/` answer cross-source questions and make agent reasoning explicit.
+1. **Raw sources** are immutable inputs: PDFs in `vault/sources/papers/` and verbatim thoughts in `vault/sources/thoughts/`.
+2. **Source records** in `vault/sources/records/` describe one raw source, its metadata, scope, limitations, and extracted takeaways.
+3. **Atomic notes** in `vault/notes/` hold one durable claim, concept, or question.
+4. **Maps** in `vault/maps/` organize a topic without pretending that hierarchy is the only relationship.
+5. **Syntheses** in `vault/syntheses/` answer cross-source questions and make agent reasoning explicit.
 
 ## Mutation contract
 
 Before writing:
 
 1. Identify whether the input is a personal observation, external source, question, or maintenance request.
-2. Search `system/index.md`, filenames, aliases, and note contents for existing canonical pages.
+2. Search `vault/system/index.md`, filenames, aliases, and note contents for existing canonical pages.
 3. Read the relevant existing pages and their cited sources.
 4. Decide which pages need creation or revision. Avoid pages that merely repeat a source summary.
 
@@ -41,15 +43,15 @@ While writing:
 
 After writing:
 
-1. Update `system/index.md` with new durable pages and a one-line description.
-2. Append a parseable entry to `system/log.md`.
-3. Add judgments requiring the user to `system/review-queue.md`.
+1. Update `vault/system/index.md` with new durable pages and a one-line description.
+2. Append a parseable entry to `vault/system/log.md`.
+3. Add judgments requiring the user to `vault/system/review-queue.md`.
 4. Run `python3 scripts/vault_lint.py` and fix safe structural errors.
 5. Summarize created, updated, and proposed relationships to the user.
 
 ## Source and citation rules
 
-- Never alter a file in `sources/papers/` after ingestion. A replacement is a new source version.
+- Never alter a file in `vault/sources/papers/` after ingestion. A replacement is a new source version.
 - Record the PDF path and SHA-256 digest in its source record.
 - Cite PDF evidence with `[[Paper filename.pdf#page=N|Author, year, p. N]]`.
 - Page numbers refer to PDF pages as rendered by Obsidian. If printed page labels differ, say so in the source record.
@@ -59,7 +61,7 @@ After writing:
 
 ## Personal thought rules
 
-- Preserve the user's wording in a dated file under `sources/thoughts/`.
+- Preserve the user's wording in a dated file under `vault/sources/thoughts/`.
 - Separate verbatim text from an agent-written interpretation.
 - Do not present a personal belief as an externally verified fact.
 - A sensitive thought remains local; do not search for or transmit related information unless the user requests it.

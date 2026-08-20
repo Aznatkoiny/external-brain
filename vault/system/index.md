@@ -39,3 +39,4 @@ No question notes yet.
 ## Maps and syntheses
 
 - [[Home]] - initial navigation map.
+- [[Docling Graph and External Brain]] - proposed architecture for using Docling Graph as a provenance-aware PDF extraction sidecar.

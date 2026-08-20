@@ -13,7 +13,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 
-VAULT_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[1]
+VAULT_ROOT = REPO_ROOT / "vault"
 CONTENT_ROOTS = (
     "sources/records",
     "sources/thoughts",
@@ -23,7 +24,7 @@ CONTENT_ROOTS = (
     "system",
 )
 ROOT_CONTENT_FILES = ("START HERE.md",)
-IGNORED_PARTS = {"skills", "templates", ".git", ".obsidian", "tmp", "output"}
+IGNORED_PARTS = {".obsidian"}
 COMMON_FIELDS = {"type", "title", "status", "created", "updated", "tags"}
 LINK_RE = re.compile(r"!?\[\[([^\]]+)\]\]")
 LOG_HEADING_RE = re.compile(r"^## \[\d{4}-\d{2}-\d{2}\] [a-z-]+ \| .+$", re.MULTILINE)
@@ -267,7 +268,7 @@ def main() -> int:
     print(f"vault lint: {errors} error(s), {warnings} warning(s)")
 
     if args.json:
-        output_path = args.json if args.json.is_absolute() else VAULT_ROOT / args.json
+        output_path = args.json if args.json.is_absolute() else REPO_ROOT / args.json
         output_path.parent.mkdir(parents=True, exist_ok=True)
         payload = {"errors": errors, "warnings": warnings, "findings": [asdict(item) for item in findings]}
         output_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
