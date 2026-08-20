@@ -1,0 +1,16 @@
+{
+  "name": "external-brain",
+  "version": "0.2.1",
+  "description": "Capture thoughts and academic papers as a source-grounded Obsidian knowledge graph.",
+  "author": {
+    "name": "Aznatkoiny"
+  },
+  "homepage": "https://github.com/Aznatkoiny/external-brain",
+  "repository": "https://github.com/Aznatkoiny/external-brain",
+  "keywords": [
+    "obsidian",
+    "zettelkasten",
+    "academic-papers",
+    "knowledge-management"
+  ]
+}

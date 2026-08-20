@@ -1,9 +1,13 @@
 .DS_Store
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
+vault/.obsidian/workspace.json
+vault/.obsidian/workspace-mobile.json
 __pycache__/
 *.pyc
+vault/sources/papers/*
+!vault/sources/papers/.gitkeep
 tmp/pdfs/*
 !tmp/pdfs/.gitkeep
+tmp/docling-graph/
+tmp/vault-lint*.json
 output/pdf/*
 !output/pdf/.gitkeep

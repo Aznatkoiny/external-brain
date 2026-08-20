@@ -1,10 +1,10 @@
 # External Brain agent contract
 
-This repository is an Obsidian vault maintained collaboratively by the user and AI agents. Markdown is the durable knowledge layer; chat history is not.
+This repository contains an Obsidian vault in `vault/`, maintained collaboratively by the user and AI agents. Markdown in that directory is the durable knowledge layer; chat history is not.
 
 ## Mandatory routing
 
-Before mutating vault knowledge, read `system/protocol.md` and `system/schema.md` completely, then load the matching skill:
+Before mutating vault knowledge, read `vault/system/protocol.md` and `vault/system/schema.md` completely, then load the matching skill:
 
 - A personal observation, idea, reflection, or request to remember something: `skills/vault-capture/SKILL.md`
 - An academic paper or PDF to process, compare, or integrate: `skills/vault-ingest-paper/SKILL.md`
@@ -17,8 +17,8 @@ Operational conversation is not automatically knowledge. Capture it only when th
 
 ## Non-negotiable boundaries
 
-- Treat files in `sources/papers/` as immutable originals.
-- Preserve personal thoughts verbatim in `sources/thoughts/` before synthesizing them.
+- Treat files in `vault/sources/papers/` as immutable originals.
+- Preserve personal thoughts verbatim in `vault/sources/thoughts/` before synthesizing them.
 - Separate `personal-observation`, `source-claim`, and `agent-inference` in note metadata.
 - Cite paper claims to the PDF and page. Never invent a page, quote, DOI, author, or relationship.
 - Search for an existing page before creating one. Prefer updating a canonical page over creating a synonym.

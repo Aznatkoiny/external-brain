@@ -1,0 +1,26 @@
+{
+  "name": "external-brain",
+  "description": "Agent workflows for a source-grounded Obsidian research vault.",
+  "owner": {
+    "name": "Aznatkoiny"
+  },
+  "plugins": [
+    {
+      "name": "external-brain",
+      "source": "./marketplace/plugins/external-brain",
+      "description": "Capture thoughts and academic papers as a source-grounded Obsidian knowledge graph.",
+      "version": "0.2.1",
+      "author": {
+        "name": "Aznatkoiny"
+      },
+      "homepage": "https://github.com/Aznatkoiny/external-brain",
+      "repository": "https://github.com/Aznatkoiny/external-brain",
+      "category": "productivity",
+      "tags": [
+        "obsidian",
+        "zettelkasten",
+        "research"
+      ]
+    }
+  ]
+}

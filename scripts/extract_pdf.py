@@ -13,7 +13,8 @@ import sys
 from pathlib import Path
 
 
-VAULT_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[1]
+VAULT_ROOT = REPO_ROOT / "vault"
 PAPERS_ROOT = (VAULT_ROOT / "sources" / "papers").resolve()
 
 
@@ -156,9 +157,9 @@ def render_pages(input_path: Path, output_dir: Path, pages: list[int]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Extract a PDF to tmp/pdfs with stable page boundaries and optional rendered pages."
+        description="Extract a vault PDF to tmp/pdfs with stable page boundaries and optional rendered pages."
     )
-    parser.add_argument("pdf", type=Path, help="PDF under sources/papers/")
+    parser.add_argument("pdf", type=Path, help="PDF under vault/sources/papers/")
     parser.add_argument(
         "--render-pages",
         default="",
@@ -173,10 +174,10 @@ def main() -> int:
     if input_path.suffix.lower() != ".pdf":
         fail(f"source does not have a .pdf extension: {input_path.name}")
     if not input_path.is_relative_to(PAPERS_ROOT):
-        fail("PDF must be stored under sources/papers/ before extraction")
+        fail("PDF must be stored under vault/sources/papers/ before extraction")
 
     digest = sha256_file(input_path)
-    output_dir = VAULT_ROOT / "tmp" / "pdfs" / f"{safe_stem(input_path.stem)}-{digest[:12]}"
+    output_dir = REPO_ROOT / "tmp" / "pdfs" / f"{safe_stem(input_path.stem)}-{digest[:12]}"
     metadata_path = output_dir / "metadata.json"
 
     reused = False
@@ -197,7 +198,7 @@ def main() -> int:
         "source": input_path.relative_to(VAULT_ROOT).as_posix(),
         "sha256": digest,
         "page_count": page_count,
-        "output_dir": output_dir.relative_to(VAULT_ROOT).as_posix(),
+        "output_dir": output_dir.relative_to(REPO_ROOT).as_posix(),
         "rendered_pages": pages,
         "reused": reused,
     }
